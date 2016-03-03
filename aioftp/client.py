@@ -576,6 +576,8 @@ class Client(BaseClient):
         :rtype: :py:class:`dict`
         """
         code, info = await self.command("MLST " + str(path), "2xx")
+        print(code)
+        print(info)
         name, info = self.parse_mlsx_line(str.lstrip(info[1]))
         return info
 
